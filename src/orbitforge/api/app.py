@@ -8,7 +8,9 @@ from orbitforge.link.budget import free_space_loss_db
 from orbitforge.environment.eclipse import eclipse_state
 from orbitforge.attitude.quaternion import Quaternion
 from orbitforge.storage.sqlite import Store
+from orbitforge.catalog.service import router as catalog_router
 app = FastAPI(title='OrbitForge Mission Lab', version='1.0.0')
+app.include_router(catalog_router)
 store = Store(':memory:')
 
 class KeplerReq(BaseModel):
