@@ -1,4 +1,6 @@
 from __future__ import annotations
+# Metadata-only TLE helper. SGP4 ingestion and propagation use orbitforge.tle
+# with the official SGP4 package; do not wire this parser to a two-body/J2 model.
 from dataclasses import dataclass
 import math
 
